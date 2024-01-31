@@ -1,1 +1,65 @@
-ggh
+#include<stdlib.h>
+
+#include<stdio.h>
+
+int main(){
+
+int *p=NULL,1,j,n,m,k,c;
+
+printf("ENTER THE NO. OF ARRAYS TO SEARCH\n");
+
+scanf("%d",&n);
+
+for(i=0;i<n;i++)
+
+{ printf("ENTER THE NO. OF ELEMENTS IN ARRAYS \n"); scanf("%d",&m); p=(int*)malloc(m*sizeof(int));
+
+printf("ENTER ARRAY\n");
+
+for(j=0; j<m; j++)
+
+{
+
+scanf("%d", (p+j));
+
+}
+
+printf("ENTER ELEMENT TO SEARCH IN ARRAY \n"); scanf("%d",&k);
+
+C=0;
+
+for(j=0;j<m; j++)
+
+{
+
+C=C+1;
+
+if(*(p+j)==k)
+
+}
+
+break;
+
+}
+
+}
+
+if(j!=m)
+
+{
+
+printf("PRESENT %d\n",c);
+
+}
+
+else
+
+{ printf(" NOT PRESENT %d\n",c);
+
+} free(p);
+
+}
+
+return 0;
+
+}
