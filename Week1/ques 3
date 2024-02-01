@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int f=0,n,i,j,k,c=0,s=0;
+    cout<<"ENTER NO. OF ELEMENTS IN ARRAY"<<endl;
+    cin>>n;
+    int *p=new int[n];
+     cout<<"ENTER ARRAY"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>*(p+i);
+    }
+    cout<<"ENTER  OF ELEMENT TO SEARCH IN ARRAY"<<endl;
+    cin>>k;
+    c=c+1;
+    if(*(p)==k)
+    {
+      f=2;
+      cout<<"PRESENT "<<c;
+      s=0;   
+    }
+    else if(*(p)>k)
+    {
+        f=2;
+        cout<<"NOT PRESENT "<<c;
+    }
+    else
+    {
+    for(s=2;s<n;s=s*2)
+    {
+    c=c+1;
+    if(*(p+s)>k)
+    {
+      f=1;
+      break;
+    }
+    else if(*(p+s)==k)
+    {
+      f=2;
+      cout<<"PRESENT "<<c;
+      break;
+    }
+    }
+    if(f!=2)
+    {
+        for(i=s/2  + 1;i<s && i<n;i++)
+        {
+            
+            c=c+1;
+            if(*(p+i)==k)
+            {
+                f=2;
+                cout<<"PRESENT "<<c;
+            }
+        }
+        if(f<=1)
+        {
+        cout<<"NOT PRESENT "<<c;
+        }
+    }
+    
+    }
+    return 0;
+}
