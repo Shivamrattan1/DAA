@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+bool binarysearch(int *p,int k,int l,int r,int *c)
+
+ {
+
+if(1<=r)
+
+{
+
+int m=1+(r-1)/2;
+
+*c=*c+1;
+
+if(*(p+m)==k)
+
+{
+
+return true;
+
+}
+
+else if(*(p+m)>k)
+
+{
+
+return binarysearch(p,k,l,m-1,c);
+
+}
+
+else if(*(p+m)<k)
+
+{
+
+return binarysearch(p,k,m+1,r,c);
+
+}
+
+}false;
+
+}
+
+int main()
+
+{
+
+int n,k,i,f=0;
+
+cout<<"ENTER NO. OF ELEMENTS IN ARRAY\n";
+
+cin>>n;
+
+cout<<"ENTER ARRAY\n";
+
+int *p = new int[n];
+
+for(i=0;i<n;i++)
+{
+
+cin>>*(p+i);
+}
+cout<<"ENTER ELEMENT TO SEARCH IN ARRAY\n";
+
+cin>>k;
+if(binarysearch(p,k,0,-1,&f))
+{
+cout<<" PRESENT "<<f;
+}
+else
+{
+cout<<"NOT PRESENT "<<f;
+}
+return 0;
+
+}
