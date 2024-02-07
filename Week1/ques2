@@ -5,11 +5,11 @@ bool binarysearch(int *p,int k,int l,int r,int *c)
 
  {
 
-if(1<=r)
+if(l<=r)
 
 {
 
-int m=1+(r-1)/2;
+int m=l+(r-l)/2;
 
 *c=*c+1;
 
@@ -37,8 +37,8 @@ return binarysearch(p,k,m+1,r,c);
 
 }
 
-}false;
-
+}
+return false;
 }
 
 int main()
@@ -63,7 +63,7 @@ cin>>*(p+i);
 cout<<"ENTER ELEMENT TO SEARCH IN ARRAY\n";
 
 cin>>k;
-if(binarysearch(p,k,0,-1,&f))
+if(binarysearch(p,k,0,n-1,&f))
 {
 cout<<" PRESENT "<<f;
 }
