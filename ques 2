@@ -1,0 +1,55 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    
+int n,k,i,c=0,j;
+cout<<"ENTER NO. OF ELEMENTS IN ARRAY\n";
+cin>>n;
+cout<<"ENTER ARRAY\n";
+
+int *p = new int[n];
+
+for(i=0;i<n;i++)
+{
+cin>>*(p+i);
+}
+
+for(k=2;k<n;k++)
+{
+    i=0;
+    j=1;
+    if(  (*(p+i))  + (*(p+j)) ==(*(p+k)) )
+    {
+        cout<<i<<"  "<<j<<"  "<<k;
+        c=1;
+        break;
+    }
+    for(i=0;i<k-1;i++)
+    {
+        for(j=i+1;j<k;j++)
+        {
+        if(  (*(p+i))  + (*(p+j)) ==(*(p+k)) )
+        {
+        cout<<i<<"  "<<j<<"  "<<k;
+        c=1;
+        break;
+        }
+        if(c==1)
+        {
+            break;
+        }
+        }
+    }
+    if(c==1)
+    {
+        break;
+    }
+}
+if(c==0)
+{
+    cout<<"no sequence"<<endl;
+}
+    return 0;
+}
